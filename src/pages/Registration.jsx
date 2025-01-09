@@ -1,6 +1,57 @@
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom"
+import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
+
 const Registration = () => {
+
+
+  const { 
+    user,
+    setUser,
+    createUser,
+    signInWithGoogle,
+    logOut,
+    updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+
+//new formate of using the firebase signIn for google -> check login same is use there
+const handleGoogleSignin = async () =>{
+  try{
+    await signInWithGoogle()
+    toast.success('Sign in Successful');
+    navigate('/')    
+  }
+  catch(error){
+    console.log(error)
+    toast.error(error?.message)
+  }
+}
+
+//Sign Up for registration
+
+const handleFormRegistration = async (e) =>{
+  e.preventDefault();
+  const name = e.target.name.value;
+  const email = e.target.email.value;
+  const photoURL = e.target.photoURL.value;
+  const password = e.target.password.value;
+
+  console.log(name,email,photoURL,password)
+}
+
+
+
+
+
+
+
+
+
+
   return (
-    <div className='flex justify-center items-center min-h-[calc(100vh-306px)]'>
+    <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
       <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
         <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
           <div className='flex justify-center mx-auto'>
@@ -37,7 +88,7 @@ const Registration = () => {
               </svg>
             </div>
 
-            <span className='w-5/6 px-4 py-3 font-bold text-center'>
+            <span onClick={handleGoogleSignin} className='w-5/6 px-4 py-3 font-bold text-center'>
               Sign in with Google
             </span>
           </div>

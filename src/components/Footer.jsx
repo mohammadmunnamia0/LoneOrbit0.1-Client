@@ -1,12 +1,18 @@
+
+import loginImg from '../images/logo.png'
+
+
 const Footer = () => {
+
+
   return (
     <footer className='bg-white shadow-sm'>
       <hr />
       <div className='container px-6 py-8 mx-auto'>
         <div className='flex flex-col items-center text-center'>
           <div className='flex gap-2 items-center'>
-            <img className='w-auto h-7' src='' alt='' />
-            <span>SoloSphere</span>
+            <img className='w-auto h-7' src={loginImg} alt='' />
+            <span>LoneOrbit</span>
           </div>
 
           <div className='flex flex-wrap justify-center mt-6 -mx-4'>
