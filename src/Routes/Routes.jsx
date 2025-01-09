@@ -15,6 +15,7 @@ import Home from "../pages/Home";
         {
            path:'/home',
             element:<Home></Home>,
+            loader: () => fetch(`${import.meta.env.VITE_API_URL}/jobs`),
         },
         
         {
