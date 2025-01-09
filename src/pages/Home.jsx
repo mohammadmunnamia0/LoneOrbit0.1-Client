@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
 
-            <h1 className='text-5xl text-center'>Welcome to LoneOrbit Home</h1>
+            <h1 className='text-5xl font-bold my-5 text-center'>Welcome to LoneOrbit</h1>
             <Carousel></Carousel>
            <TabCategory></TabCategory>
             

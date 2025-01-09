@@ -5,9 +5,15 @@ const TabCategory = () => {
   return (
     <div className="container px-6 py-10 mx-auto">
       <div className="text-center py-10">
-      <h1 className="text-4xl font-bold capitalize"> Browse Jobs By Categories</h1>
-      <p className="mt-4 text-xl">Three categories available for the time being. They are Web Development, Graphics Design and Digital Marketing. Browse them by clicking on the tabs below.
-      </p>
+        <h1 className="text-4xl font-bold capitalize">
+          {" "}
+          Browse Jobs By Categories
+        </h1>
+        <p className="mt-4 text-xl">
+          Three categories available for the time being. They are Web
+          Development, Graphics Design and Digital Marketing. Browse them by
+          clicking on the tabs below.
+        </p>
       </div>
       <div>
         <Tabs>
