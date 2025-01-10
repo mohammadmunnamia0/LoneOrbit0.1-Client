@@ -15,7 +15,7 @@ import Home from "../pages/Home";
         {
            path:'/',
             element:<Home></Home>,
-            loader: () => fetch(`${import.meta.env.VITE_API_URL}/jobs`),
+            // loader: () => fetch(`${import.meta.env.VITE_API_URL}/jobs`),  --> before using axios
         },
         
         {

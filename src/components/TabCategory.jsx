@@ -1,8 +1,26 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import JobCard from "./JobCard";
+import useState, { useEffect } from 'react';
+import axios from "axios";
 
-const TabCategory = ({jobs}) => {
+
+// const TabCategory = ({jobs}) => --> before using axios
+
+const TabCategory = () => {
+
+  //used the axios for fetch the data insted of using loader in routes
+
+ const [jobs, setJobs] = useState([]);
+ useEffect(()=>{
+  const getData = async() =>{
+    const {data} = await axios(`${import.meta.env.VITE_API_URL}/jobs`)
+    setJobs(data);
+  }
+  getData();
+ })
+
+
   return (
     <div className="container px-6 py-10 mx-auto">
       <div className="text-center py-10">
@@ -31,15 +49,32 @@ const TabCategory = ({jobs}) => {
           <TabPanel>
          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3">
          {
-            jobs.map(job => <JobCard job={job} key={job.id}></JobCard>)
+            jobs
+            .filter(j=>j.category==='Web Development') //for specif jobs categories
+            .map(job => 
+            <JobCard key={job._id} job={job} ></JobCard>)
           }
          </div>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 2</h2>
+          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3">
+         {
+            jobs
+            .filter(j=>j.category==='Graphics Design')
+            .map(job => 
+            <JobCard key={job._id} job={job} ></JobCard>)
+          }
+         </div>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 3</h2>
+          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3">
+         {
+            jobs
+            .filter(j=>j.category==='Digital Marketing')
+            .map(job => 
+            <JobCard key={job._id} job={job} ></JobCard>)
+          }
+         </div>
           </TabPanel>
         </Tabs>
       </div>

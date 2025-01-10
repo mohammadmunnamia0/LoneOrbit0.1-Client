@@ -4,8 +4,9 @@ import Carousel from "../components/carousel";
 import TabCategory from "../components/TabCategory";
 
 const Home = () => {
-  const jobs = useLoaderData();
-  console.log("Jobs Data:", jobs);
+  // const jobs = useLoaderData();
+  // console.log("Jobs Data:", jobs);  --> before using axios
+ 
 
   return (
     <div>
@@ -16,7 +17,8 @@ const Home = () => {
       <h1 className="text-5xl font-bold my-5 text-center">
         Available Jobs - {jobs.length}
       </h1>
-      <TabCategory jobs={jobs}></TabCategory> 
+      {/* <TabCategory jobs={jobs}></TabCategory>   --> before using axios */} 
+      <TabCategory></TabCategory> 
       {/*  <TabCategory jobs={jobs}></TabCategory>  --->  passing the jobs that we fetch from mongobd to the TabCategory and there we will map the jobs */}
     </div>
   );
