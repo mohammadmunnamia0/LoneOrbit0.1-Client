@@ -1,9 +1,10 @@
-import { useLoaderData } from "react-router-dom"
+import { Await, useLoaderData } from "react-router-dom"
 import { useContext } from "react"
 import { AuthContext } from "../provider/AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import React, { useState } from "react";
+import axios from "axios";
 
 const JobDetails = () => {
 
@@ -24,7 +25,7 @@ const {
   buyer_email} = job || {}
 
 
-  const handleForm = e =>{
+  const handleForm = async  (e) =>{
     e.preventDefault();
     const jobID = _id;
     const price = parseFloat(e.target.price.value);
@@ -47,6 +48,14 @@ const {
     }
     console.log(bidData);
     console.table(bidData);
+
+    try {
+      const { data } = await axios.post(`http://localhost:9000/bid`, bidData); 
+      console.log(data);
+    } 
+    catch (error) {
+      console.error("Error placing bid:", error); 
+    }
   }
 
   return (
