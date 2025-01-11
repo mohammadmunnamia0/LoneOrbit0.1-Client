@@ -11,7 +11,7 @@ const Footer = () => {
       <div className='container px-6 py-8 mx-auto'>
         <div className='flex flex-col items-center text-center'>
           <div className='flex gap-2 items-center'>
-            <img className='w-auto h-7' src={loginImg} alt='' />
+            <img className='w-auto h-7' src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/LO-emblem.svg/2056px-LO-emblem.svg.png" alt='' />
             <span>LoneOrbit</span>
           </div>
 
@@ -102,7 +102,7 @@ const Footer = () => {
             </a>
 
             <a
-              href='#'
+              href='https://github.com/mohammadmunnamia0'
               className='mx-2 text-gray-600 transition-colors duration-300 hover:text-blue-500 '
               aria-label='Github'
             >

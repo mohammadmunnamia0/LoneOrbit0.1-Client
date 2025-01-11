@@ -5,6 +5,7 @@ import Main from "../layouts/Main";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import Home from "../pages/Home";
+import JobDetails from "../pages/JobDetails";
 
 
  const router = createBrowserRouter([
@@ -17,7 +18,6 @@ import Home from "../pages/Home";
             element:<Home></Home>,
             // loader: () => fetch(`${import.meta.env.VITE_API_URL}/jobs`),  --> before using axios
         },
-        
         {
           path:'/login',
           element:<Login/>,
@@ -25,8 +25,14 @@ import Home from "../pages/Home";
         {
           path:'/registration',
           element:<Registration/>,
-        }
-      ]
+        },
+        {
+          path:'/job/:id',
+          element:<JobDetails></JobDetails>,
+          loader: ({params}) =>
+             fetch(`${import.meta.env.VITE_API_URL}/job/${params.id}`),
+        },
+      ],
     },
   ]);
 
