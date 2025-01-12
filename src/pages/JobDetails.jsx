@@ -2,12 +2,9 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useLoaderData } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
-
-
-
 
 const JobDetails = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -24,11 +21,12 @@ const JobDetails = () => {
     description,
     min_price,
     max_price,
-    buyer_email,
+    buyer,
   } = job || {};
 
   const handleForm = async (e) => {
     e.preventDefault();
+
     const jobID = _id;
     const price = parseFloat(e.target.price.value);
 
@@ -40,7 +38,7 @@ const JobDetails = () => {
     const comment = e.target.comment.value;
     const email = e.target.email.value;
 
-    if (user?.email === buyer_email) {
+    if (user?.email === buyer?.email) {
       return toast.error("Action not permitted");
     }
 
@@ -56,7 +54,8 @@ const JobDetails = () => {
       category,
       email,
       status,
-      buyer_email,
+      buyer,
+      buyer_email:buyer?.email,
     };
     console.log(bidData);
     console.table(bidData);
@@ -79,7 +78,7 @@ const JobDetails = () => {
       <div className="flex-1  px-4 py-7 bg-white rounded-md shadow-md md:min-h-[350px]">
         <div className="flex items-center justify-between">
           <span className="text-sm font-light text-gray-800 ">
-            Deadline:{deadline}
+            Deadline: {new Date(deadline).toLocaleDateString()}
           </span>
           <span className="px-4 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full ">
             {job.job_title}
@@ -97,13 +96,15 @@ const JobDetails = () => {
           </p>
           <div className="flex items-center gap-5">
             <div>
-              <p className="mt-2 text-sm  text-gray-600 ">Name: Jhankar Vai.</p>
               <p className="mt-2 text-sm  text-gray-600 ">
-                Email: abc@gmail.com
+                Name: {buyer?.name}
+              </p>
+              <p className="mt-2 text-sm  text-gray-600 ">
+                Email: {buyer?.email}
               </p>
             </div>
             <div className="rounded-full object-cover overflow-hidden w-14 h-14">
-              <img src="" alt="" />
+              <img src={buyer?.photo} alt="" />
             </div>
           </div>
           <p className="mt-6 text-lg font-bold text-gray-600 ">
