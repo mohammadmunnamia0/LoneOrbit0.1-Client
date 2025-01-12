@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const ErrorPage = () => {
   return (
     <section className='bg-white '>
@@ -33,7 +35,7 @@ const ErrorPage = () => {
             </button>
 
             <button className='w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-gray-500 rounded-lg shrink-0 sm:w-auto hover:bg-gray-600'>
-              Take me home
+             <Link to='/'>Take me home</Link>
             </button>
           </div>
         </div>

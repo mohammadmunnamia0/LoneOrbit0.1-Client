@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to='/home'>Home</Link>
+            <Link to='/'>Home</Link>
           </li>
 
           {!user && (
@@ -54,16 +54,16 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <div className="justify-between">Add Job</div>
+                <Link to='/add_jobs' className="justify-between">Add Job</Link>
               </li>
               <li>
-                <div>My Posted Jobs</div>
+                <Link to='/my_posted_jobs'>My Posted Jobs</Link>
               </li>
               <li>
-                <div>My Bids</div>
+                <Link to='my_bids'>My Bids</Link>
               </li>
               <li>
-                <div>Bid Requests</div>
+                <Link to='/bid_requests'>Bid Requests</Link>
               </li>
               <li className="mt-2">
                 <button onClick={logOut} className="bg-gray-200 block text-center">
