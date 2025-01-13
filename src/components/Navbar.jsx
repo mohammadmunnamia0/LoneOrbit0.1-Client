@@ -17,13 +17,13 @@ const Navbar = () => {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/LO-emblem.svg/2056px-LO-emblem.svg.png"
             alt=""
           />
-          <span className="font-bold">LoneOrbit</span>
+          <span className="font-bold text-xl"><Link to='/'>LoneOrbit</Link></span>
         </div>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to='/'>Home</Link>
+            <Link className="font-bold bg-lime-400 text-lg " to='/'>Home</Link>
           </li>
 
           {!user && (

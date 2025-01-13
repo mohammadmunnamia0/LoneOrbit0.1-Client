@@ -18,7 +18,7 @@ import bg3 from '../images/carousel3.jpg'
 
 export default function Carousel() {
   return (
-    <div className="container px-6 py-10 mx-auto">
+    <div className="container px-6 py-10 mx-auto ">
       <Swiper
        centeredSlides= {true}
         spaceBetween={30}
@@ -34,7 +34,7 @@ export default function Carousel() {
         modules={[Autoplay,Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide >
           <Slide image={bg1} text='Get Your Web Development Projects Done in minutes'></Slide>
         </SwiperSlide>
         <SwiperSlide>

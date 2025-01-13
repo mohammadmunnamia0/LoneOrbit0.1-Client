@@ -1,0 +1,20 @@
+/* src/styles/styles.css */
+.rainbow-text {
+  font-size: 4rem; /* Adjust size as necessary */
+  font-weight: bold;
+  background: linear-gradient(90deg, red, orange, rgb(177, 177, 38), green, blue, indigo, violet);
+  background-size: 200% 100%; /* Increase background size for smoother animation */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s infinite linear;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%; /* Start from the left */
+  }
+  50% {
+    background-position: 100% 50%; /* Shift to the right */
+  }
+ 
+}
