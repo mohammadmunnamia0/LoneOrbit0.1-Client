@@ -74,7 +74,7 @@ const HandleFormSignIn = async(e) =>
           <div className='flex justify-center mx-auto'>
             <img
               className='w-auto h-7 sm:h-8'
-              src='https://merakiui.com/images/logo.svg'
+              src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/LO-emblem.svg/2056px-LO-emblem.svg.png'
               alt=''
             />
           </div>

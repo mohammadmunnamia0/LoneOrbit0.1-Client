@@ -24,8 +24,8 @@ const Home = () => {
         </h1>
         </div>
 
-        <div className="mx-auto flex justify-center text-center  px-6 py-10  container">
-          <img className="w-96 rounded-md h-auto"
+        <div className="mx-auto flex justify-center text-center  px-6 py-10 container">
+          <img className="w-auto rounded-md h-[400px] transition-all transform hover:scale-105 hover:opacity-80 duration-300 "
             src="https://cdn.dribbble.com/users/3848091/screenshots/7827479/media/5f226eb6aa71d3b639a73d214e716db6.gif"
             height="100px"
             alt="Loading animation"

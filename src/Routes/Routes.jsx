@@ -55,6 +55,30 @@ import UpdateJob from "../pages/UpdateJob";
           element:<MyPostedJobs/>,
         },
         {
+          path:'/add_jobs',
+          element:<AddJob></AddJob>,
+        },
+        {
+          path:'/my_posted_jobs',
+          element:<MyPostedJobs/>,
+        },
+        {
+          path:'/add_jobs',
+          element:<AddJob></AddJob>,
+        },
+        {
+          path:'/my_posted_jobs',
+          element:<MyPostedJobs/>,
+        },
+        {
+          path:'/add_jobs',
+          element:<AddJob></AddJob>,
+        },
+        {
+          path:'/my_posted_jobs',
+          element:<MyPostedJobs/>,
+        },
+        {
           path:'my_bids',
           element:<MyBids></MyBids>,
         },

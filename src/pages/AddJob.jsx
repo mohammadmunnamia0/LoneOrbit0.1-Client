@@ -4,6 +4,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import { IoIosArrowBack } from "react-icons/io";
 
 const AddJob = () => {
 
@@ -58,6 +59,10 @@ const AddJob = () => {
   return (
     <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
       <section className=' p-2 md:p-6 mx-auto bg-white rounded-md shadow-md '>
+      <span className="btn border-cyan-500 hover:border-green-500-500"
+    onClick={() => { navigate(-1) }} >
+                <IoIosArrowBack />
+              </span>
         <h2 className='text-lg font-semibold text-gray-700 capitalize '>
           Post a Job
         </h2>

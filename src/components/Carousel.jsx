@@ -32,7 +32,7 @@ export default function Carousel() {
         }}
         navigation={true}
         modules={[Autoplay,Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper rounded-xl overflow-hidden"
       >
         <SwiperSlide >
           <Slide image={bg1} text='Get Your Web Development Projects Done in minutes'></Slide>
