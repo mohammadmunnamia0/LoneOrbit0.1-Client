@@ -127,21 +127,6 @@ for (let i = 38; i <= 69; i++) {
     },
   });
 }
-for (let i = 71; i <= 104; i++) {
-  mockJobs.push({
-    id: i,
-    job_title: `Digital Marketer #${i}`,
-    category: "Digital Marketing",
-    min_price: 200 + i * 7,
-    max_price: 800 + i * 12,
-    deadline: `2024-07-${8 + (i % 20)}T00:00:00.000Z`,
-    description: `Run digital marketing campaign for client #${i}.`,
-    buyer: {
-      email: `client${i}@example.com`,
-      name: `Marketer ${i}`,
-      photo: `https://randomuser.me/api/portraits/men/${i}.jpg`,
-    },
-  });
-}
+
 
 export default mockJobs;
