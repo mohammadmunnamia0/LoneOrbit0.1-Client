@@ -1,98 +1,71 @@
 import {
     createBrowserRouter,
-  } from "react-router-dom";
+} from "react-router-dom";
 import Main from "../layouts/Main";
-import Login from "../pages/Login";
-import Registration from "../pages/Registration";
+import AddJob from "../pages/AddJob";
+import AllJobs from "../pages/AllJobs";
+import BidRequests from "../pages/BidRequests";
+import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import JobDetails from "../pages/JobDetails";
-import AddJob from "../pages/AddJob";
-import ErrorPage from "../pages/ErrorPage";
-import AllJobs from "../pages/AllJobs";
-import MyPostedJobs from "../pages/MyPostedJobs";
+import Login from "../pages/Login";
 import MyBids from "../pages/MyBids";
-import BidRequests from "../pages/BidRequests";
+import MyPostedJobs from "../pages/MyPostedJobs";
+import Registration from "../pages/Registration";
 import UpdateJob from "../pages/UpdateJob";
 
-
- const router = createBrowserRouter([
+const router = createBrowserRouter([
     {
       path: "/",
-      element:<Main></Main>,
-      errorElement:<ErrorPage></ErrorPage>,
-      children:[
+      element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
+      children: [
         {
-           path:'/',
-            element:<Home></Home>,
-            // loader: () => fetch(`${import.meta.env.VITE_API_URL}/jobs`),  --> before using axios
+          path: '/',
+          element: <Home></Home>,
         },
         {
-          path:'/login',
-          element:<Login/>,
+          path: '/login',
+          element: <Login/>,
         },
         {
-          path:'/registration',
-          element:<Registration/>,
+          path: '/registration',
+          element: <Registration/>,
         },
         {
-          path:'/job/:id',
-          element:<JobDetails></JobDetails>,
+          path: '/job/:id',
+          element: <JobDetails></JobDetails>,
           loader: ({params}) =>
-             fetch(`${import.meta.env.VITE_API_URL}/job/${params.id}`),
+             fetch(`http://localhost:9000/job/${params.id}`),
         },
         {
-          path:'/update/:id',
-          element:<UpdateJob></UpdateJob>,
+          path: '/update/:id',
+          element: <UpdateJob></UpdateJob>,
           loader: ({params}) =>
-            fetch(`${import.meta.env.VITE_API_URL}/job/${params.id}`),
+            fetch(`http://localhost:9000/job/${params.id}`),
         },
         {
-          path:'/add_jobs',
-          element:<AddJob></AddJob>,
+          path: '/add_jobs',
+          element: <AddJob></AddJob>,
         },
         {
-          path:'/my_posted_jobs',
-          element:<MyPostedJobs/>,
+          path: '/my_posted_jobs',
+          element: <MyPostedJobs/>,
         },
         {
-          path:'/add_jobs',
-          element:<AddJob></AddJob>,
+          path: '/my_bids',
+          element: <MyBids></MyBids>,
         },
         {
-          path:'/my_posted_jobs',
-          element:<MyPostedJobs/>,
+          path: '/bid_requests',
+          element: <BidRequests></BidRequests>,
         },
         {
-          path:'/add_jobs',
-          element:<AddJob></AddJob>,
-        },
-        {
-          path:'/my_posted_jobs',
-          element:<MyPostedJobs/>,
-        },
-        {
-          path:'/add_jobs',
-          element:<AddJob></AddJob>,
-        },
-        {
-          path:'/my_posted_jobs',
-          element:<MyPostedJobs/>,
-        },
-        {
-          path:'my_bids',
-          element:<MyBids></MyBids>,
-        },
-        {
-          path:'/bid_requests',
-          element:<BidRequests></BidRequests>,
-        },
-        {
-          path:'/all_jobs',
-          element:<AllJobs></AllJobs>,
+          path: '/all_jobs',
+          element: <AllJobs></AllJobs>,
         }
       ],
     },
   ]);
 
-
-  export default router;
+export default router;
